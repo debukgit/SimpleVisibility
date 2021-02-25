@@ -25,5 +25,5 @@ Updated to 1.1.0
 - Optional AutoUpdate mechanism added ( activate it in the addon preferences ) 
 
 Updated to 1.1.1
-- Changed Behaviour for Global Viewport Visibility (screen icon). Now always set to true, not to interfere.
+- Changed Behaviour for Global Viewport Visibility (screen icon). Now always set to visible, not to interfere.
 		   
