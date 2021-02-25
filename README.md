@@ -8,7 +8,7 @@ A small blender addon to set render-visibility to viewport-visibility
 
 # Installation
 
-- Use "clone or download" to download 
+- Use "Code -> Download zip" to download 
 - Extract the python file (.py) from the zip archive 
 - Install the extracted python file within blender  (Edit Menu -> Preferences -> Addons)
 - Activate "Object: SimpleVisibility"
