@@ -25,7 +25,7 @@ bl_info = {
     "name": "SimpleVisibility",
     "description": "Sets every objects render-visibility to be in sync with viewport-visibility",
     "author": "Debuk",
-    "version": (1, 1, 0),
+    "version": (1, 1, 1),
     'license': 'GPL v3',
     "blender": (2, 80, 0),
     "support": "COMMUNITY",
@@ -43,7 +43,7 @@ class OBJECT_OT_render_to_viewport_visibility(bpy.types.Operator):
     def execute(self, context):
         for obj in bpy.data.objects:
             obj.hide_render =  obj.hide_get()
-            obj.hide_viewport = obj.hide_get()
+            obj.hide_viewport = False
 
         return {'FINISHED'}
 
@@ -84,7 +84,7 @@ def on_before_render(scene):
     if addon_prefs.autoUpdate:
         for obj in bpy.data.objects:
             obj.hide_render =  obj.hide_get()
-            obj.hide_viewport = obj.hide_get()
+            obj.hide_viewport = False
  
  
 def register():
