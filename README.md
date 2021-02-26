@@ -3,6 +3,10 @@
 A small blender addon to keep render-visibility in sync with viewport-visibility. 
 Intended for simpler usecases/workflows where render and viewport visibility shall always be treated the same.
 
+# Usage
+
+Visibility sync can be triggered manually via the outliner context menu. Or it can update the sync status automatically directly before render via the autoupdate setting. The setting is permanent across working sessions and can easily be toggled via the outliner context menu. So just activate / deactivate it as needed.
+
 # Buy me a coffee
 
 [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/I2I31T92M)
