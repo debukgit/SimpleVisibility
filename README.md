@@ -26,4 +26,8 @@ Updated to 1.1.0
 
 Updated to 1.1.1
 - Changed Behaviour for Global Viewport Visibility (screen icon). Now always set to visible, not to interfere.
+
+Updated to 1.1.2
+
+- Switching AutoUpdate (permanent setting) is now easier reachable directly from outliner context menu
 		   
