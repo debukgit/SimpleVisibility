@@ -25,7 +25,7 @@ bl_info = {
     "name": "SimpleVisibility",
     "description": "Sets every objects render-visibility to be in sync with viewport-visibility",
     "author": "Debuk",
-    "version": (1, 1, 1),
+    "version": (1, 1, 2),
     'license': 'GPL v3',
     "blender": (2, 80, 0),
     "support": "COMMUNITY",
@@ -49,14 +49,19 @@ class OBJECT_OT_render_to_viewport_visibility(bpy.types.Operator):
 
 
 class OBJECT_MT_outliner_set_menu(bpy.types.Menu):
-    bl_label = "Visibility"
+    bl_label = "SimpleVisibility"
     bl_idname = "object.render_to_viewport_visibility_menu"
     
     def draw(self, context):
+        addon_prefs = bpy.context.preferences.addons[__name__].preferences
         layout = self.layout
         layout.separator()
+        layout.label(text="Operators")
         layout.operator("object.render_to_viewport_visibility", text="Set Render To Viewport Vis.",
                         icon='UV_SYNC_SELECT')
+        layout.separator()
+        layout.label(text="Preferences")
+        layout.prop(addon_prefs, "autoUpdate",text="AutoUpdate")
      
 class SimpleVisibility_Preferences(AddonPreferences):
     bl_idname = __name__
@@ -88,6 +93,7 @@ def on_before_render(scene):
  
  
 def register():
+
     bpy.utils.register_class(OBJECT_MT_outliner_set_menu)
     bpy.utils.register_class(OBJECT_OT_render_to_viewport_visibility)
     bpy.utils.register_class(SimpleVisibility_Preferences)
