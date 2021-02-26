@@ -1,4 +1,4 @@
-#  SimpleVisibility 1.1.1 for Blender
+#  SimpleVisibility 1.1.2 for Blender
 
 A small blender addon to keep render-visibility in sync with viewport-visibility. 
 Intended for simpler usecases/workflows where render and viewport visibility shall always be treated the same.
