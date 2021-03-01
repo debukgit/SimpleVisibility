@@ -25,12 +25,22 @@ bl_info = {
     "name": "SimpleVisibility",
     "description": "Sets every objects render-visibility to be in sync with viewport-visibility",
     "author": "Debuk",
-    "version": (1, 1, 2),
+    "version": (1, 2, 0),
     'license': 'GPL v3',
     "blender": (2, 80, 0),
     "support": "COMMUNITY",
     "category": "Object"    
 }
+
+def getAllLayerCollections(topLevelLayerColl):
+    allLayerColls = []
+    getAllLayerCollectionsInternal(topLevelLayerColl, allLayerColls)
+    return allLayerColls;
+    
+def getAllLayerCollectionsInternal(layercoll, list):
+    list.append(layercoll)
+    for currCol in layercoll.children:
+        getAllLayerCollectionsInternal(currCol, list)
 
 
 class OBJECT_OT_render_to_viewport_visibility(bpy.types.Operator):
@@ -41,8 +51,15 @@ class OBJECT_OT_render_to_viewport_visibility(bpy.types.Operator):
 
 
     def execute(self, context):
-        for obj in bpy.data.objects:
-            obj.hide_render =  obj.hide_get()
+
+        cols = getAllLayerCollections(bpy.context.layer_collection)
+        for col in cols:
+            col.collection.hide_viewport = False
+            col.collection.hide_render = col.hide_viewport
+
+        objs = bpy.context.layer_collection.collection.all_objects
+        for obj in objs:
+            obj.hide_render =  obj.hide_get(view_layer=bpy.context.view_layer)
             obj.hide_viewport = False
 
         return {'FINISHED'}
@@ -83,14 +100,22 @@ def menu_obj(self, context):
     layout.separator()
     layout.menu("object.render_to_viewport_visibility_menu")
 
+
 @persistent
 def on_before_render(scene):
     addon_prefs = bpy.context.preferences.addons[__name__].preferences
     if addon_prefs.autoUpdate:
-        for obj in bpy.data.objects:
-            obj.hide_render =  obj.hide_get()
+
+        cols = getAllLayerCollections(bpy.context.layer_collection)
+        for col in cols:
+            col.collection.hide_viewport = False
+            col.collection.hide_render = col.hide_viewport
+
+        objs = bpy.context.layer_collection.collection.all_objects
+        for obj in objs:
+            obj.hide_render =  obj.hide_get(view_layer=bpy.context.view_layer)
             obj.hide_viewport = False
- 
+
  
 def register():
 
@@ -99,6 +124,7 @@ def register():
     bpy.utils.register_class(SimpleVisibility_Preferences)
     bpy.types.OUTLINER_MT_context_menu.append(menu_obj)  
     bpy.app.handlers.render_pre.append(on_before_render)
+
 
 
 def unregister():
