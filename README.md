@@ -1,4 +1,4 @@
-#  SimpleVisibility 1.1.2 for Blender
+#  SimpleVisibility 1.2.0 for Blender
 
 A small blender addon to keep render-visibility in sync with viewport-visibility. 
 Intended for simpler usecases/workflows where render and viewport visibility shall always be treated the same.
@@ -35,3 +35,9 @@ Updated to 1.1.2
 
 - Switching AutoUpdate (permanent setting) is now easier reachable directly from outliner context menu
 		   
+Updated to 1.2.0 
+- This version now supports syncing collections and collection hierarchies aswell
+- Syncing now works with multiple Viewlayers
+- Multiple Windows are fully support for manual sync and auto sync modes
+- Multiple Main-Windows are already fully supported for manual sync. 
+- Note: With AutoUpdate mode the viewlayer detection might sync to the active viewlayer of another than the current window, but just in case of multiple main windows with multiple viewlayers and different active viewlayers set on each window. In this case you might want to switch to manual sync mode temporarily. Should be ruled out soon.
