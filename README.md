@@ -13,9 +13,9 @@ Visibility sync can be triggered manually via the outliner context menu. Or it c
 
 # Installation
 
-- Use "Code -> Download zip" to download 
-- Extract the python file (.py) from the zip archive 
-- Install the extracted python file within blender  (Edit Menu -> Preferences -> Addons)
+- Download the latest release zip here: https://github.com/debukgit/SimpleVisibility/releases
+- (Dont use "Code -> Download zip" to download)`
+- Install the zip file within blender  (Edit Menu -> Preferences -> Addons)
 - Activate "Object: SimpleVisibility"
 
 # Preferences
