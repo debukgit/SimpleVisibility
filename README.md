@@ -20,7 +20,7 @@ Visibility sync can be triggered manually via the outliner context menu. Or it c
 
 # Preferences
 
-AutoUpdate added
+AutoSync setting
 
 # What's New
 
@@ -46,7 +46,7 @@ AutoUpdate added
 
 - Added support for 2.93ff
 - Bugfix: Corrected visibility treatment of multiple collections regardless of active collections
-- Implemented a solution for  multi mainwindow / multi viewlayer treatment in automatic mode
+- Implemented a solution for  multi mainwindow / multi viewlayer treatment in automatic mode (autosync)
 - Some minor bug fixes
 - Renamed AutoUpdate to Autosync
   
