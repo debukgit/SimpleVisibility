@@ -14,7 +14,7 @@ Visibility sync can be triggered manually via the outliner context menu. Or it c
 # Installation
 
 - Download the latest release zip here: https://github.com/debukgit/SimpleVisibility/releases
-- (Dont use "Code -> Download zip" to download)`
+- (Dont use "Code -> Download zip" for installation from zip)`
 - Install the zip file within blender  (Edit Menu -> Preferences -> Addons)
 - Activate "Object: SimpleVisibility"
 
